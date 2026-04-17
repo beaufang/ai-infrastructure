@@ -1,0 +1,23 @@
+[
+  {
+    "id": "minimax",
+    "name": "MiniMax",
+    "baseUrl": "https://api.minimaxi.com/anthropic",
+    "model": "MiniMax-M2.7",
+    "apiKey": ""
+  },
+  {
+    "id": "dashscope",
+    "name": "百炼（阿里云）",
+    "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "model": "qwen3.6-plus",
+    "apiKey": ""
+  },
+  {
+    "id": "zhipu",
+    "name": "智谱",
+    "baseUrl": "https://open.bigmodel.cn/api/anthropic",
+    "model": "glm-4.7",
+    "apiKey": ""
+  }
+]
