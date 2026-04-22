@@ -25,6 +25,8 @@ function cc-sp { & "你的路径\cc-sp.ps1" @args }
 cc-sp              # 交互式菜单
 cc-sp minimax      # 快速切换到 MiniMax
 cc-sp dashscope    # 快速切换到百炼
+cc-sp zhipu        # 快速切换到智谱
+cc-sp ark          # 快速切换到字节方舟
 cc-sp status       # 查看当前 Provider
 cc-sp reset        # 恢复默认
 cc-sp add          # 添加自定义 Provider
@@ -44,6 +46,13 @@ cc-sp help         # 显示帮助
     "name": "MiniMax",
     "baseUrl": "https://api.minimaxi.com/anthropic",
     "model": "MiniMax-M2.7",
+    "apiKey": "你的API Key"
+  },
+  {
+    "id": "ark",
+    "name": "字节方舟",
+    "baseUrl": "https://ark.cn-beijing.volces.com/api/coding",
+    "model": "glm-5.1",
     "apiKey": "你的API Key"
   }
 ]

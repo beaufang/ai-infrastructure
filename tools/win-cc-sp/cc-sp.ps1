@@ -26,7 +26,8 @@ function Init-Config {
     $defaults = @(
         [PSCustomObject]@{ id = "minimax";   name = "MiniMax";       baseUrl = "https://api.minimaxi.com/anthropic";             model = "MiniMax-M2.7"; apiKey = "" },
         [PSCustomObject]@{ id = "dashscope";  name = "百炼（阿里云）"; baseUrl = "https://dashscope.aliyuncs.com/compatible-mode/v1"; model = "qwen3.6-plus"; apiKey = "" },
-        [PSCustomObject]@{ id = "zhipu";      name = "智谱";          baseUrl = "https://open.bigmodel.cn/api/anthropic";         model = "glm-4.7";      apiKey = "" }
+        [PSCustomObject]@{ id = "zhipu";      name = "智谱";          baseUrl = "https://open.bigmodel.cn/api/anthropic";         model = "glm-4.7";      apiKey = "" },
+        [PSCustomObject]@{ id = "ark";        name = "字节方舟";      baseUrl = "https://ark.cn-beijing.volces.com/api/coding";  model = "glm-5.1"; apiKey = "" }
     )
     Save-Providers $defaults
     Write-Host "`n  已创建配置文件: $ConfigFile" -ForegroundColor Green
