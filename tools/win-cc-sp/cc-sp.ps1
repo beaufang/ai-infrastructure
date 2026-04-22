@@ -94,6 +94,8 @@ function Show-Status($providers) {
         Write-Host "  当前: 默认（全局 settings.json）" -ForegroundColor DarkGray
     }
     Write-Host ""
+    Write-Host "  默认模型（Haiku/Opus/Sonnet）: $env:ANTHROPIC_DEFAULT_HAIKU_MODEL" -ForegroundColor Gray
+    Write-Host ""
 }
 
 function Switch-To($provider) {
@@ -106,6 +108,9 @@ function Switch-To($provider) {
     $env:ANTHROPIC_BASE_URL  = $provider.baseUrl
     $env:ANTHROPIC_AUTH_TOKEN = $provider.apiKey
     $env:ANTHROPIC_MODEL      = $provider.model
+    $env:ANTHROPIC_DEFAULT_HAIKU_MODEL = $provider.model
+    $env:ANTHROPIC_DEFAULT_OPUS_MODEL = $provider.model
+    $env:ANTHROPIC_DEFAULT_SONNET_MODEL = $provider.model
 
     Write-Host ""
     Write-Host "  已切换: $($provider.name)" -ForegroundColor Green
@@ -117,7 +122,7 @@ function Switch-To($provider) {
 
 function Reset-Session {
     $removed = @()
-    foreach ($v in @("ANTHROPIC_BASE_URL", "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_MODEL")) {
+    foreach ($v in @("ANTHROPIC_BASE_URL", "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_MODEL", "ANTHROPIC_DEFAULT_HAIKU_MODEL", "ANTHROPIC_DEFAULT_OPUS_MODEL", "ANTHROPIC_DEFAULT_SONNET_MODEL")) {
         if (Test-Path "Env:$v") { Remove-Item "Env:$v"; $removed += $v }
     }
     Write-Host ""
