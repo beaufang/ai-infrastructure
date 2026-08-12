@@ -1,0 +1,24 @@
+[search]
+# auto: Parallel Direct 优先，失败/无 Key 时回退 OpenRouter
+provider = "auto"
+
+# auto: 英文/无汉字查询 -> turbo；含中文汉字 -> basic
+mode = "auto"
+max_results = 8
+max_chars_total = 12000
+timeout_seconds = 30
+fallback = true
+
+[parallel]
+api_key_env = "PARALLEL_API_KEY"
+base_url = "https://api.parallel.ai/v1/search"
+
+[openrouter]
+api_key_env = "OPENROUTER_API_KEY"
+base_url = "https://openrouter.ai/api/v1/chat/completions"
+# OpenRouter 官方提供的 latest alias；也可用 OPENROUTER_MODEL 覆盖
+model = "~openai/gpt-latest"
+# v0.1 默认仍使用 Parallel；保留 engine 配置便于以后扩展
+engine = "parallel"
+app_title = "Universal Search Skill"
+# http_referer = "https://your-project.example"
